@@ -1,90 +1,34 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-			body {
-  				font-family: "Lato", sans-serif;
-			}
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-			.sidenav {
-  				height: 100%;
-  				width: 160px;
-  				position: fixed;
-  				z-index: 1;
-  				top: 0;
-  				left: 0;
-  				background-color: #111;
-  				overflow-x: hidden;
-  				padding-top: 20px;
-			}
+  
+---
+layout: compress
+---
 
-			.sidenav a {
-  				padding: 6px 8px 6px 16px;
-  				text-decoration: none;
-  				font-size: 25px;
-  				color: #818181;
-  				display: block;
-			}
+{% include base_path %}
 
-			.sidenav a:hover {
-  				color: #f1f1f1;
-			}
-			.main {
-  				margin-left: 160px; /* Same as the width of the sidenav */
-  				font-size: 28px; /* Increased text to enable scrolling */
-  				padding: 0px 10px;
-			}
-			@media screen and (max-height: 450px) {
-  				.sidenav {padding-top: 15px;}
-  				.sidenav a {font-size: 18px;}
-			}
-		</style>
-		</head>
-		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Simone Maurizio La Cava</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/projects">Projects</a></li>
-	    		</ul>
-			</nav>
-			<div class="sidenav">
-				<div class="sidebar sticky">
-					<div itemscope="" itemtype="http://schema.org/Person">
-						<div class="author__avatar">
-							<img src="https://smlacava.github.io/images/SMLC_profile.jpg" class="author__avatar" alt="Simone Maurizio La Cava"></div>
-						<div class="author__content"><h3 class="author__name">Simone Maurizio La Cava</h3>
-							<p class="author__bio">A Biomedical and - soon - Computer Engineer with academic and research experience in multivariate biosignals and Artificial Intelligence.</p></div>
-						<div class="author__urls-wrapper"> 
-							<button class="btn btn--inverse">Follow</button>
-							<ul class="author__urls social-icons">
-								<li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Italy</li>
-								<li><a href="mailto:simonemaurizio.lacava@gmail.com">
-									<i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
-								<li><a href="https://github.com/smlacava">
-									<i class="fa fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
-								<li><a href="https://scholar.google.com/citations?user=ilco-ckAAAAJ&oi=ao;view_op=list_works&amp;sortby=pubdate">
-									<i class="ai ai-google-scholar-square ai-fw"></i> Google Scholar</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Page content -->
-			<div class="main">
-				<div class="container">
-					{{ content }}			
-				</div><!-- /.container -->
-			</div>
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:simonemaurizio.lacava@gmail.com">email</a></li>
-	        		<li><a href="https://github.com/smlacava">github.com/smlacava</a></li>
-				</ul>
-			</footer>
-		</body>
-	</html>
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body>
+
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
+
+    {{ content }}
+
+    </script>
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>
